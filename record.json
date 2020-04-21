@@ -1,0 +1,83 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "additionalProperties": true,
+    "required": [
+        "records_list"
+    ],
+    "properties": {
+        "records_list": {
+            "$id": "#/properties/records_list",
+            "type": "array",
+            "title": "The Records_list Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "image_link": "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+                        "uuid": "123e4567-e89b-12d3-a456-426655440000",
+                        "creation_date": 1587477209.0
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/records_list/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "image_link": "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+                        "uuid": "123e4567-e89b-12d3-a456-426655440000",
+                        "creation_date": 1587477209.0
+                    }
+                ],
+                "additionalProperties": true,
+                "required": [
+                    "uuid",
+                    "creation_date",
+                    "image_link"
+                ],
+                "properties": {
+                    "uuid": {
+                        "$id": "#/properties/records_list/items/properties/uuid",
+                        "type": "string",
+                        "title": "The Uuid Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "123e4567-e89b-12d3-a456-426655440000"
+                        ]
+                    },
+                    "creation_date": {
+                        "$id": "#/properties/records_list/items/properties/creation_date",
+                        "type": "integer",
+                        "title": "The Creation_date Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            1587477209.0
+                        ]
+                    },
+                    "image_link": {
+                        "$id": "#/properties/records_list/items/properties/image_link",
+                        "type": "string",
+                        "title": "The Image_link Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "https://pngimage.net/wp-content/uploads/2018/05/face-png.png"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

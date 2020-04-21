@@ -1,0 +1,117 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "additionalProperties": true,
+    "required": [
+        "routines_list"
+    ],
+    "properties": {
+        "routines_list": {
+            "$id": "#/properties/routines_list",
+            "type": "array",
+            "title": "The Routines_list Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "title": "Hydro",
+                        "uuid": "123e4567-e89b-12d3-a456-426655440000",
+                        "about": "Pure water",
+                        "steps_list": [
+                            "123e4567-e89b-12d3-a456-426655440000",
+                            "123e4567-e89b-12d3-a456-426655440000"
+                        ]
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/routines_list/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "title": "Hydro",
+                        "uuid": "123e4567-e89b-12d3-a456-426655440000",
+                        "about": "Pure water",
+                        "steps_list": [
+                            "123e4567-e89b-12d3-a456-426655440000",
+                            "123e4567-e89b-12d3-a456-426655440000"
+                        ]
+                    }
+                ],
+                "additionalProperties": true,
+                "required": [
+                    "uuid",
+                    "title",
+                    "about",
+                    "steps_list"
+                ],
+                "properties": {
+                    "uuid": {
+                        "$id": "#/properties/routines_list/items/properties/uuid",
+                        "type": "string",
+                        "title": "The Uuid Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "123e4567-e89b-12d3-a456-426655440000"
+                        ]
+                    },
+                    "title": {
+                        "$id": "#/properties/routines_list/items/properties/title",
+                        "type": "string",
+                        "title": "The Title Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Hydro"
+                        ]
+                    },
+                    "about": {
+                        "$id": "#/properties/routines_list/items/properties/about",
+                        "type": "string",
+                        "title": "The About Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Pure water"
+                        ]
+                    },
+                    "steps_list": {
+                        "$id": "#/properties/routines_list/items/properties/steps_list",
+                        "type": "array",
+                        "title": "The Steps_list Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": [],
+                        "examples": [
+                            [
+                                "123e4567-e89b-12d3-a456-426655440000",
+                                "123e4567-e89b-12d3-a456-426655440000"
+                            ]
+                        ],
+                        "additionalItems": true,
+                        "items": {
+                            "$id": "#/properties/routines_list/items/properties/steps_list/items",
+                            "type": "string",
+                            "title": "The Items Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "123e4567-e89b-12d3-a456-426655440000",
+                                "123e4567-e89b-12d3-a456-426655440000"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

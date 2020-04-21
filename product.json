@@ -1,0 +1,273 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "additionalProperties": true,
+    "required": [
+        "products_list"
+    ],
+    "properties": {
+        "products_list": {
+            "$id": "#/properties/products_list",
+            "type": "array",
+            "title": "The Products_list Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "ingredients_list": [
+                            "def",
+                            "abc"
+                        ],
+                        "type": "lipstick",
+                        "expiry_date": 1587476654.0,
+                        "title": "The best Lipstick",
+                        "about": "Descriptipon of product",
+                        "uuid": "123e4567-e89b-12d3-a456-426655440000",
+                        "price": 300.0,
+                        "shelf_uuid": "123e4567-e89b-12d3-a456-426655440000",
+                        "scanning_date": 1587476654.0,
+                        "alarm_date": 1587476654.0,
+                        "images_links": [
+                            "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+                            "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+                            "https://pngimage.net/wp-content/uploads/2018/05/face-png.png"
+                        ]
+                    },
+                    {
+                        "title": "The best Lipstick",
+                        "expiry_date": 1587476654.0,
+                        "about": "Descriptipon of product",
+                        "uuid": "123e4567-e89b-12d3-a456-426655440000",
+                        "price": 300.0,
+                        "shelf_uuid": "123e4567-e89b-12d3-a456-426655440000",
+                        "scanning_date": 1587476654.0,
+                        "images_links": [
+                            "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+                            "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+                            "https://pngimage.net/wp-content/uploads/2018/05/face-png.png"
+                        ],
+                        "alarm_date": 1587476654.0,
+                        "ingredients_list": [
+                            "def",
+                            "abc"
+                        ],
+                        "type": "lipstick"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/products_list/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "type": "lipstick",
+                        "title": "The best Lipstick",
+                        "expiry_date": 1587476654.0,
+                        "about": "Descriptipon of product",
+                        "uuid": "123e4567-e89b-12d3-a456-426655440000",
+                        "price": 300.0,
+                        "shelf_uuid": "123e4567-e89b-12d3-a456-426655440000",
+                        "scanning_date": 1587476654.0,
+                        "images_links": [
+                            "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+                            "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+                            "https://pngimage.net/wp-content/uploads/2018/05/face-png.png"
+                        ],
+                        "alarm_date": 1587476654.0,
+                        "ingredients_list": [
+                            "def",
+                            "abc"
+                        ]
+                    },
+                    {
+                        "images_links": [
+                            "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+                            "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+                            "https://pngimage.net/wp-content/uploads/2018/05/face-png.png"
+                        ],
+                        "alarm_date": 1587476654.0,
+                        "ingredients_list": [
+                            "def",
+                            "abc"
+                        ],
+                        "type": "lipstick",
+                        "expiry_date": 1587476654.0,
+                        "title": "The best Lipstick",
+                        "price": 300.0,
+                        "uuid": "123e4567-e89b-12d3-a456-426655440000",
+                        "about": "Descriptipon of product",
+                        "shelf_uuid": "123e4567-e89b-12d3-a456-426655440000",
+                        "scanning_date": 1587476654.0
+                    }
+                ],
+                "additionalProperties": true,
+                "required": [
+                    "uuid",
+                    "title",
+                    "about",
+                    "type",
+                    "scanning_date",
+                    "alarm_date",
+                    "expiry_date",
+                    "ingredients_list",
+                    "price",
+                    "shelf_uuid",
+                    "images_links"
+                ],
+                "properties": {
+                    "uuid": {
+                        "$id": "#/properties/products_list/items/properties/uuid",
+                        "type": "string",
+                        "title": "The Uuid Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "123e4567-e89b-12d3-a456-426655440000"
+                        ]
+                    },
+                    "title": {
+                        "$id": "#/properties/products_list/items/properties/title",
+                        "type": "string",
+                        "title": "The Title Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "The best Lipstick"
+                        ]
+                    },
+                    "about": {
+                        "$id": "#/properties/products_list/items/properties/about",
+                        "type": "string",
+                        "title": "The About Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Descriptipon of product"
+                        ]
+                    },
+                    "type": {
+                        "$id": "#/properties/products_list/items/properties/type",
+                        "type": "string",
+                        "title": "The Type Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "lipstick"
+                        ]
+                    },
+                    "scanning_date": {
+                        "$id": "#/properties/products_list/items/properties/scanning_date",
+                        "type": "integer",
+                        "title": "The Scanning_date Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            1587476654.0
+                        ]
+                    },
+                    "alarm_date": {
+                        "$id": "#/properties/products_list/items/properties/alarm_date",
+                        "type": "integer",
+                        "title": "The Alarm_date Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            1587476654.0
+                        ]
+                    },
+                    "expiry_date": {
+                        "$id": "#/properties/products_list/items/properties/expiry_date",
+                        "type": "integer",
+                        "title": "The Expiry_date Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            1587476654.0
+                        ]
+                    },
+                    "ingredients_list": {
+                        "$id": "#/properties/products_list/items/properties/ingredients_list",
+                        "type": "array",
+                        "title": "The Ingredients_list Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": [],
+                        "examples": [
+                            [
+                                "def",
+                                "abc"
+                            ]
+                        ],
+                        "additionalItems": true,
+                        "items": {
+                            "$id": "#/properties/products_list/items/properties/ingredients_list/items",
+                            "type": "string",
+                            "title": "The Items Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "def",
+                                "abc"
+                            ]
+                        }
+                    },
+                    "price": {
+                        "$id": "#/properties/products_list/items/properties/price",
+                        "type": "integer",
+                        "title": "The Price Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            300.0
+                        ]
+                    },
+                    "shelf_uuid": {
+                        "$id": "#/properties/products_list/items/properties/shelf_uuid",
+                        "type": "string",
+                        "title": "The Shelf_uuid Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "123e4567-e89b-12d3-a456-426655440000"
+                        ]
+                    },
+                    "images_links": {
+                        "$id": "#/properties/products_list/items/properties/images_links",
+                        "type": "array",
+                        "title": "The Images_links Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": [],
+                        "examples": [
+                            [
+                                "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+                                "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+                                "https://pngimage.net/wp-content/uploads/2018/05/face-png.png"
+                            ]
+                        ],
+                        "additionalItems": true,
+                        "items": {
+                            "$id": "#/properties/products_list/items/properties/images_links/items",
+                            "type": "string",
+                            "title": "The Items Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+                                "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+                                "https://pngimage.net/wp-content/uploads/2018/05/face-png.png"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

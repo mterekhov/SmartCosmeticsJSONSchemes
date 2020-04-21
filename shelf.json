@@ -1,0 +1,136 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The Root Schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "additionalProperties": true,
+    "required": [
+        "shelf_list"
+    ],
+    "properties": {
+        "shelf_list": {
+            "$id": "#/properties/shelf_list",
+            "type": "array",
+            "title": "The Shelf_list Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    {
+                        "title": "My Shelf",
+                        "uuid": "123e4567-e89b-12d3-a456-426655440000",
+                        "products_list": [
+                            "def",
+                            "abc"
+                        ]
+                    },
+                    {
+                        "products_list": [
+                            "def",
+                            "abc"
+                        ],
+                        "title": "My Shelf",
+                        "uuid": "123e4567-e89b-12d3-a456-426655440000"
+                    },
+                    {
+                        "products_list": [
+                            "def",
+                            "abc"
+                        ],
+                        "title": "My Shelf",
+                        "uuid": "123e4567-e89b-12d3-a456-426655440000"
+                    }
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/shelf_list/items",
+                "type": "object",
+                "title": "The Items Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "products_list": [
+                            "def",
+                            "abc"
+                        ],
+                        "title": "My Shelf",
+                        "uuid": "123e4567-e89b-12d3-a456-426655440000"
+                    },
+                    {
+                        "products_list": [
+                            "def",
+                            "abc"
+                        ],
+                        "title": "My Shelf",
+                        "uuid": "123e4567-e89b-12d3-a456-426655440000"
+                    },
+                    {
+                        "uuid": "123e4567-e89b-12d3-a456-426655440000",
+                        "products_list": [
+                            "def",
+                            "abc"
+                        ],
+                        "title": "My Shelf"
+                    }
+                ],
+                "additionalProperties": true,
+                "required": [
+                    "uuid",
+                    "title",
+                    "products_list"
+                ],
+                "properties": {
+                    "uuid": {
+                        "$id": "#/properties/shelf_list/items/properties/uuid",
+                        "type": "string",
+                        "title": "The Uuid Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "123e4567-e89b-12d3-a456-426655440000"
+                        ]
+                    },
+                    "title": {
+                        "$id": "#/properties/shelf_list/items/properties/title",
+                        "type": "string",
+                        "title": "The Title Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "My Shelf"
+                        ]
+                    },
+                    "products_list": {
+                        "$id": "#/properties/shelf_list/items/properties/products_list",
+                        "type": "array",
+                        "title": "The Products_list Schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": [],
+                        "examples": [
+                            [
+                                "def",
+                                "abc"
+                            ]
+                        ],
+                        "additionalItems": true,
+                        "items": {
+                            "$id": "#/properties/shelf_list/items/properties/products_list/items",
+                            "type": "string",
+                            "title": "The Items Schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "default": "",
+                            "examples": [
+                                "def",
+                                "abc"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
