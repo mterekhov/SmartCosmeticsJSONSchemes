@@ -32,13 +32,7 @@
                       "content": {
                           "application/json": {
                               "schema": {
-                                  "$ref": "#/components/schemas/Product"
-                              },
-                              "ingredients_list": {
-                                  "type": "array",
-                                  "items": {
-                                      "$ref": "#/components/schemas/Ingredient"
-                                  }
+                                  "$ref": "#/components/responses/ScanResponse"
                               }
                           }
                       }
@@ -48,7 +42,62 @@
       }
   },
   "components": {
+      "examples": {
+          "Product-example":{
+          "summary":"example of a product",
+          "value":{
+              "uuid": "123e4567-e89b-12d3-a456-426655440000",
+              "title": "The best Lipstick",
+              "type": "lipstick",
+              "about": "Descriptipon of product",
+              "price": 300,
+              "expiry_date": 1587476654,
+              "scanning_date": 1587476654,
+              "alarm_date": 1587476654,
+              "image": "https://pngimage.net/wp-content/uploads/2018/05/face-png.png"
+          }
+          },
+          "Ingredient-example": {
+            "summary":"example of ingredient",
+            "value":{
+              "title": "AQUA/WATER",
+              "about": "Simple H2O which you can find anywhere in this world",
+              "hazard": 0
+            }
+          }
+      },
+      "responses": {
+          "ScanResponse": {
+              "description": "Response for uploaded image for scaning purpose",
+              "content": {
+                  "application/json": {
+                      "schema": {
+                          "$ref": "#/components/schemas/ScanResponse"
+                      }
+                  }
+              }
+          }
+      },
       "schemas": {
+          "ScanResponse": {
+              "type": "object",
+              "properties": {
+                  "product_info": {
+                      "$ref": "#/components/schemas/Product"
+                  },
+                  "ingredients_list": {
+                      "$ref": "#/components/schemas/Ingredient"
+                  }
+              },
+              "example": {
+                  "product_info": {
+                      "$ref": "#/components/examples/Product-example"
+                  },
+                  "ingredients_list": {
+                      "$ref": "#/components/examples/Ingredient-example"
+                  }
+              }
+          },
           "Product": {
               "type": "object",
               "required": [
@@ -82,6 +131,9 @@
                   "image": {
                       "type": "string"
                   }
+              },
+              "example": {
+                  "$ref": "#/components/examples/Product-example"
               }
           },
           "Ingredient": {
@@ -96,6 +148,11 @@
                   "hazard_level": {
                       "type": "integer"
                   }
+              },
+              "example": {
+                  "title": "AQUA/WATER",
+                  "about": "Simple H2O which you can find anywhere in this world",
+                  "hazard": 0
               }
           }
       }
