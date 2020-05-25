@@ -1,0 +1,103 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+      "version": "1.0",
+      "title": "SmartCosmeticsBackend API",
+      "license": {
+          "name": "MIT"
+      }
+  },
+  "servers": [
+      {
+          "url": "https://mobile.smartcosmetics.com/v1"
+      }
+  ],
+  "paths": {
+      "/scan": {
+          "post": {
+              "summary": "Send binary data of jpeg image for scanning",
+              "requestBody": {
+                  "content": {
+                      "application/octet-stream": {
+                          "schema": {
+                              "type": "string",
+                              "format": "binary"
+                          }
+                      }
+                  }
+              },
+              "responses": {
+                  "200": {
+                      "description": "Results of scanning and recognition",
+                      "content": {
+                          "application/json": {
+                              "schema": {
+                                  "$ref": "#/components/schemas/Product"
+                              },
+                              "ingredients_list": {
+                                  "type": "array",
+                                  "items": {
+                                      "$ref": "#/components/schemas/Ingredient"
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  },
+  "components": {
+      "schemas": {
+          "Product": {
+              "type": "object",
+              "required": [
+                  "uuid"
+              ],
+              "properties": {
+                  "uuid": {
+                      "type": "string"
+                  },
+                  "title": {
+                      "type": "string"
+                  },
+                  "type": {
+                      "type": "string"
+                  },
+                  "about": {
+                      "type": "string"
+                  },
+                  "price": {
+                      "type": "integer"
+                  },
+                  "expiry_date": {
+                      "type": "integer"
+                  },
+                  "scanning_date": {
+                      "type": "integer"
+                  },
+                  "alarm_date": {
+                      "type": "integer"
+                  },
+                  "image": {
+                      "type": "string"
+                  }
+              }
+          },
+          "Ingredient": {
+              "type": "object",
+              "properties": {
+                  "title": {
+                      "type": "string"
+                  },
+                  "about": {
+                      "type": "string"
+                  },
+                  "hazard_level": {
+                      "type": "integer"
+                  }
+              }
+          }
+      }
+  }
+}
