@@ -17,7 +17,47 @@
       }
   ],
   "paths": {
-      "/recommendations":{
+      "/shelves_list":{
+          "get":{
+              "summary": "list of shelves for current user",
+              "responses": {
+                  "200":{
+                      "description": "In case of successfull request, server returns list of shelves",
+                      "content":{
+                        "application-json":{
+                            "schema":{
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/Shelf"
+                                }
+                            }
+                        }
+                      }
+                  }
+              }
+          }
+      },
+    "/products_types_list":{
+        "get":{
+            "summary": "Download list of products types",
+            "responses": {
+                "200":{
+                    "description": "Successfull request with list of products types",
+                    "content":{
+                        "application-json":{
+                            "schema":{
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/ProductType"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "/recommendations":{
           "get":{
               "summary": "Download list of recommendations to show on profile screen",
               "responses": {
@@ -69,17 +109,25 @@
               "properties": {
                   "product_info": {
                       "$ref": "#/components/schemas/Product"
-                  },
-                  "ingredients_list": {
-                      "type": "array",
-                      "items": {
-                          "$ref": "#/components/schemas/Ingredient"
-                      }
                   }
               },
               "example": {
                   "$ref": "#/components/examples/ScanResponse-example"
               }
+          },
+          "ProductType":{
+              "type": "object",
+              "properties": {
+                  "title":{
+                      "type": "string"
+                  },
+                  "uuid":{
+                      "type": "string"
+                  }
+              },
+              "example":{
+                "$ref":"#/components/examples/ProductType-example"
+            }
           },
           "RecommendedProduct":{
             "type": "object",
@@ -137,10 +185,33 @@
                   },
                   "image": {
                       "type": "string"
-                  }
-              },
+                  },
+                  "ingredients_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/Ingredient"
+                    }
+                }
+            },
               "example": {
                   "$ref": "#/components/examples/Product-example"
+              }
+          },
+          "Shelf":{
+              "type": "object",
+              "properties": {
+                  "uuid":{
+                      "type":"string"
+                  },
+                  "title":{
+                      "type": "string"
+                  },
+                  "products_list":{
+                      "type": "array",
+                      "items":{
+                          "$ref":"#/components/schemas/Product"
+                    }
+                  }
               }
           },
           "Ingredient": {
@@ -188,17 +259,24 @@
                   "image": "https://pngimage.net/wp-content/uploads/2018/05/face-png.png"
               }
           },
-          "Recommended-example":{
-              "summary": "excample of recommended product to show on profile screen",
-              "value":{
-                "uuid": "123e4567-e89b-12d3-a456-426655440000",
-                "title": "The best Lipstick",
-                "about": "Descriptipon of product",
-                "image": "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
-                "link":"https://www.smartcosmetics.com/showProduct?uuid=123e4567-e89b-12d3-a456-426655440000"
-            }
-          },
-          "Product-example": {
+          "ProductType-example":{
+            "summary": "example of product type",
+            "value":{
+              "uuid": "123e4567-e89b-12d3-a456-426655440000",
+              "title": "The best Lipstick"
+          }
+        },
+        "Recommended-example":{
+            "summary": "example of recommended product to show on profile screen",
+            "value":{
+              "uuid": "123e4567-e89b-12d3-a456-426655440000",
+              "title": "The best Lipstick",
+              "about": "Descriptipon of product",
+              "image": "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+              "link":"https://www.smartcosmetics.com/showProduct?uuid=123e4567-e89b-12d3-a456-426655440000"
+          }
+        },
+      "Product-example": {
               "summary": "example of a product",
               "value": {
                   "uuid": "123e4567-e89b-12d3-a456-426655440000",
@@ -218,6 +296,18 @@
                   "title": "AQUA/WATER",
                   "about": "Simple H2O which you can find anywhere in this world",
                   "hazard": 0
+              }
+          },
+          "Shelf-example":{
+              "summary": "example of single shelf",
+              "value":{
+                "uuid": "123e4567-e89b-12d3-a456-426655440000",
+                "title": "best products",
+                "products_list_uuid": [
+                    "123e4567-e89b-12d3-a456-426655440000",
+                    "123e4567-e89b-12d3-a456-426655440002",
+                    "123e4567-e89b-12d3-a456-426655440003"
+                ]
               }
           }
       }
