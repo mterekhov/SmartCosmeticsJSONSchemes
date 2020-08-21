@@ -3,6 +3,10 @@
   "info": {
       "version": "1.0",
       "title": "SmartCosmeticsBackend API",
+      "description":"This is REST API of SmartCosmetics project",
+      "contact": {
+          "email":"teremalex@protonmail.com"
+        },
       "license": {
           "name": "MIT"
       }
@@ -13,6 +17,23 @@
       }
   ],
   "paths": {
+      "/recommendations":{
+          "get":{
+              "summary": "Download list of recommendations to show on profile screen",
+              "responses": {
+                  "200":{
+                      "description": "Successfull request with list of recommended products",
+                      "content":{
+                          "application-json":{
+                              "schema":{
+                                  "$ref":"#/components/schemas/RecommendedProduct"
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      },
       "/scan": {
           "post": {
               "summary": "Send binary data of jpeg image for scanning",
@@ -59,6 +80,30 @@
               "example": {
                   "$ref": "#/components/examples/ScanResponse-example"
               }
+          },
+          "RecommendedProduct":{
+            "type": "object",
+            "properties": {
+                "uuid":{
+                    "type": "string",
+                    "description": "unique use id"
+                },
+                "title":{
+                    "type": "string"
+                },
+                "about":{
+                    "type": "string"
+                },
+                "image":{
+                    "type": "string"
+                },
+                "link":{
+                    "type": "string"
+                }
+            },
+            "example":{
+                "$ref":"#/components/examples/Recommended-example"
+            }
           },
           "Product": {
               "type": "object",
@@ -142,6 +187,16 @@
                   "alarm_date": 1587476654,
                   "image": "https://pngimage.net/wp-content/uploads/2018/05/face-png.png"
               }
+          },
+          "Recommended-example":{
+              "summary": "excample of recommended product to show on profile screen",
+              "value":{
+                "uuid": "123e4567-e89b-12d3-a456-426655440000",
+                "title": "The best Lipstick",
+                "about": "Descriptipon of product",
+                "image": "https://pngimage.net/wp-content/uploads/2018/05/face-png.png",
+                "link":"https://www.smartcosmetics.com/showProduct?uuid=123e4567-e89b-12d3-a456-426655440000"
+            }
           },
           "Product-example": {
               "summary": "example of a product",
